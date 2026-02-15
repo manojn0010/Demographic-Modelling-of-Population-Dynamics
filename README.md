@@ -7,5 +7,5 @@ This project analyses population growth dynamics through a structured demographi
 Using R for data transformation, statistical modelling, and disnostic validation, the analysis focuses on growth-by-year estimation, regression-based model fitting, and structural interpretation of policy phases. The workflow integrates exploratory system visualisation, coefficient analysis, and residual diagnostics to assess model validity and demographic inertia across different policy periods
 
 ### Tools Used
-Statistical Modelling and Analysis: Base R
+Statistical Modelling and Analysis: Base R  
 Data Manipulation and Visualisation: tidyverse, ggplot2 packages
