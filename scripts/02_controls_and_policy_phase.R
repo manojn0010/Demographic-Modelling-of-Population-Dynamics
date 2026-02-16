@@ -3,7 +3,7 @@ library(dplyr)
 library(zoo)
 library(tidyr)
 
-clean_china <- read_csv("data//clean_china_wdi.csv")
+clean_china <- read_csv("data/clean/clean_china_wdi.csv")
 head(clean_china)
 clean_china <- clean_china %>% 
   mutate(
@@ -33,4 +33,4 @@ clean_china <- clean_china %>% mutate(
                                 0)
   ) %>% drop_na()
 clean_china
-write_csv(clean_china, "data//base_for_models.csv")
+write_csv(clean_china, "data/clean/base_for_models.csv")
