@@ -30,4 +30,4 @@ data_clean <- filter(data_clean, !is.na(population)) %>%
   ) %>%
   drop_na()
 
-write_csv(data_clean, "data//clean_china_wdi.csv")
+write_csv(data_clean, "data/clean/clean_china_wdi.csv")
