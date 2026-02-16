@@ -2,7 +2,7 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
-model_base <- read_csv("data//base_for_models.csv")
+model_base <- read_csv("data/clean/base_for_models.csv")
 View(model_base)
 
 plot(growth_by_year~fertility_rate, data = model_base)
@@ -41,4 +41,3 @@ model4 <- lm(
   data = model_base
 )
 summary(model4)
-
