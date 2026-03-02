@@ -1,35 +1,40 @@
+# File: 04_compare_models.R
+# Project: Population Growth Modeling
+# Purpose: Compare model coefficients and goodness-of-fit statistics
+
 library(broom)
 library(dplyr)
 library(tidyr)
 library(purrr)
+library(readr)
+library(here)
 
-models <- list(
-  model1 = model1,
-  model2 = model2,
-  model3 = model3,
-  model4 = model4
+# Load saved model list
+models <- readRDS(
+  here("outputs", "model_list.rds")
 )
 
-coeffs <- purrr::map_dfr(
+# Extract coefficients
+coeffs <- map_dfr(
   models,
   tidy,
   .id = "model"
 )
-View(coeffs)
+
 coeff_table <- coeffs %>%
-  select(model, term, estimate, p.value, std.error) %>%
+  select(model, term, estimate, std.error, p.value) %>%
   pivot_wider(
     names_from = model,
     values_from = estimate
   )
-View(coeff_table)
 
-stats <- purrr::map_dfr(
+# Extract model fit statistics
+stats <- map_dfr(
   models,
   glance,
   .id = "model"
 )
-View(stats)
+
 model_fit_table <- stats %>%
   select(
     model,
@@ -37,4 +42,14 @@ model_fit_table <- stats %>%
     sigma,
     statistic
   )
-View(model_fit_table)
+
+# Save comparison outputs
+write_csv(
+  coeff_table,
+  here("outputs", "model_coefficients_comparison.csv")
+)
+
+write_csv(
+  model_fit_table,
+  here("outputs", "model_fit_statistics.csv")
+)
