@@ -1,26 +1,33 @@
+# File: 01_load_and_clean.R
+# Project: Population Growth Modeling
+# Purpose: Load raw WDI data and produce cleaned dataset
+
 library(readxl)
-library(tidyr)
 library(dplyr)
 library(readr)
+library(here)
 
-raw_data <- read_xlsx("data//raw_china_wdi.xlsx")
-head(raw_data)
+# Load raw data
+raw_data <- read_xlsx(
+  here("data", "raw", "raw_china_wdi.xlsx")
+)
 
-data <- rename(raw_data, year = ...1)
-colnames(data)
-
-data_clean <- data %>% 
+# Rename and clean variables
+data_clean <- raw_data %>%
   rename(
+    year = ...1,
     population = `Population, total`,
     fertility_rate = `Fertility rate, total (births per woman)`,
     death_rate_per_1000 = `Death rate, crude (per 1,000 people)`,
     net_migration = `Net migration`
   ) %>%
-  select (-`...5`)
-
-View(data_clean)
-
-data_clean <- filter(data_clean, !is.na(population)) %>%
+  select(
+    year,
+    population,
+    fertility_rate,
+    death_rate_per_1000,
+    net_migration
+  ) %>%
   mutate(
     year = as.integer(year),
     population = as.numeric(population),
@@ -28,6 +35,10 @@ data_clean <- filter(data_clean, !is.na(population)) %>%
     death_rate_per_1000 = as.numeric(death_rate_per_1000),
     net_migration = as.numeric(net_migration)
   ) %>%
-  drop_na()
+  filter(!is.na(population))
 
-write_csv(data_clean, "data/clean/clean_china_wdi.csv")
+# Save cleaned dataset
+write_csv(
+  data_clean,
+  here("data", "clean", "clean_china_wdi.csv")
+)
