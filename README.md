@@ -19,7 +19,7 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
 2. Create R project  
 - Open RStudio > File > New Project > Existing Directory  
 - browse to the project directory  
-- Select **Create Project**
+- Select **Create Project**  
 This ensures the working directory is set to the project root.   
 
 3. Execute the full pipeline
@@ -45,18 +45,18 @@ Cleaned datasets are generated automatically by the pipeline.
 ## Model Specifications
 
 Drivers of the four regression models built:  
-1. Demographic baseline  
+1. Demographic baseline
   - Fertility rate  
   - Death rate  
   - Net migration  
-2. Reduced demographic model  
+2. Reduced demographic model
   - Fertility rate  
   - Death rate  
-3. Policy-augmented model  
+3. Policy-augmented model
   - Fertility rate  
   - Death rate  
   - Policy dummy  
-4. Dynamic specification  
+4. Dynamic specification
   - Fertility rate  
   - Death rate  
   - Policy dummy  
