@@ -17,22 +17,22 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
 1. Clone the repository. Extract project folder to a preferred location.
 
 2. Create R project  
-- Open RStudio > File > New Project > Existing Directory  
-- browse to the project directory  
-- Select **Create Project**  
+  - Open RStudio > File > New Project > Existing Directory  
+  - browse to the project directory  
+  - Select **Create Project**  
 
 This ensures the working directory is set to the project root.   
 
 3. Execute the full pipeline
-- Run: source("scripts/run_all/run_all.R")
-- This sequentially executes:
-  - Package installation (if required)
-  - Data loading and cleaning
-  - Feature engineering
-  - Model estimation
-  - Model comparison
-  - Residual diagnostics
-  - Population projection
+  - Run: source("scripts/run_all/run_all.R")
+  - This sequentially executes:
+    - Package installation (if required)
+    - Data loading and cleaning
+    - Feature engineering
+    - Model estimation
+    - Model comparison
+    - Residual diagnostics
+    - Population projection
 
 4. All outputs are written to `/outputs`.
 
@@ -40,7 +40,7 @@ This ensures the working directory is set to the project root.
 ## Data
 
 The project uses a static extract of World Development Indicators (WDI) data.  
-The raw dataset is included in the repository; `data/raw/raw_china_wdi.xlsx`  
+The raw dataset is included in the repository; `data/raw/raw_china_wdi.xlsx`.  
 Cleaned datasets are generated automatically by the pipeline.
 
 ---
@@ -76,5 +76,5 @@ Models are compared using:
 - No global environment dependencies are assumed.
 - The full pipeline runs from a fresh R session.
 - Feature engineering and modelling are separated for clarity and reproducibility.
-- Additional project decisions and implementation notes are documented in /documentation.md.
-- The /report.md file summarises the findings and key results of the analysis.
+- Additional project decisions and implementation notes are documented in `/documentation.md`.
+- The `/report.md` file summarises the findings and key results of the analysis.
