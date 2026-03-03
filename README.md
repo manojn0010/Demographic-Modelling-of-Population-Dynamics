@@ -19,7 +19,8 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
 2. Create R project  
 - Open RStudio > File > New Project > Existing Directory  
 - browse to the project directory  
-- Select **Create Project**      
+- Select **Create Project**  
+
 This ensures the working directory is set to the project root.   
 
 3. Execute the full pipeline
