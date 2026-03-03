@@ -35,10 +35,11 @@ data_clean <- raw_data %>%
     death_rate_per_1000 = as.numeric(death_rate_per_1000),
     net_migration = as.numeric(net_migration)
   ) %>%
-  filter(!is.na(population))
+  drop_na()
 
 # Save cleaned dataset
 write_csv(
   data_clean,
   here("data", "clean", "clean_china_wdi.csv")
 )
+
