@@ -3,7 +3,7 @@ A regression-based modelling project analysing demographic drivers of annual pop
 
 ---
 ## Description
-This project analyses population growth dynamics through a structured demographic modelling framework. It examines the interaction between key demographic drivers- fertility, mortality, and net migration- and structural policy regimes to understand long-run population behavior.
+This project analyses population growth dynamics through a structured demographic modelling framework. It examines the interaction between key demographic drivers- fertility, mortality, and net migration- and structural policy regimes to understand long-run population behaviour.
 
 Using R for data transformation, statistical modelling, and diagnostic validation, the analysis focuses on growth-by-year estimation, regression-based model fitting, and structural interpretation of policy phases. The workflow integrates exploratory visualisation, coefficient analysis, and residual diagnostics to assess model validity and demographic inertia across different policy periods.
 
