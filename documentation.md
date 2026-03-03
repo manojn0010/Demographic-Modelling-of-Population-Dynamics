@@ -1,6 +1,6 @@
 # Project Documentation  
-Project: Demographic Modelling of Population Dynamics  
-Scope: This document is intended for technical reviewers and focuses on modelling logic, data transformation decisions, and statistical assumptions rather than interpretative findings.
+**Project:** Demographic Modelling of Population Dynamics  
+**Scope:** This document is intended for technical reviewers and focuses on modelling logic, data transformation decisions, and statistical assumptions rather than interpretative findings.
 
 ---
 ## Overview  
