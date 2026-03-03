@@ -21,8 +21,6 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
   - browse to the project directory  
   - Select **Create Project**  
 
-This ensures the working directory is set to the project root.   
-
 3. Execute the full pipeline
   - Run: source("scripts/run_all/run_all.R")
   - This sequentially executes:
@@ -47,7 +45,7 @@ Cleaned datasets are generated automatically by the pipeline.
 ## Model Specifications
 
 Drivers of the four regression models built:  
-- Demographic baseline
+- Baseline demographic model
   - Fertility rate  
   - Death rate  
   - Net migration  
