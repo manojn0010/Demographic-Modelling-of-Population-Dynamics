@@ -22,7 +22,7 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
   - Select **Create Project**  
 
 3. Execute the full pipeline
-  - Open a new Script and run: `source("scripts/run_all/run_all.R")`
+  - Create a new R script and run: `source("scripts/run_all/run_all.R")`
   - This sequentially executes:
     - Package installation (if required)
     - Data loading and cleaning
