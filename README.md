@@ -20,6 +20,7 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
 - Open RStudio > File > New Project > Existing Directory  
 - browse to the project directory  
 - Select **Create Project**  
+
 This ensures the working directory is set to the project root.   
 
 3. Execute the full pipeline
@@ -37,26 +38,27 @@ This ensures the working directory is set to the project root.
 
 ---
 ## Data
+
 The project uses a static extract of World Development Indicators (WDI) data.  
-The raw dataset is included in the repository; `data/raw/raw_china_wdi.xlsx` 
+The raw dataset is included in the repository; `data/raw/raw_china_wdi.xlsx`  
 Cleaned datasets are generated automatically by the pipeline.
 
 ---
 ## Model Specifications
 
 Drivers of the four regression models built:  
-1. Demographic baseline
+- Demographic baseline
   - Fertility rate  
   - Death rate  
   - Net migration  
-2. Reduced demographic model
+- Reduced demographic model
   - Fertility rate  
   - Death rate  
-3. Policy-augmented model
+- Policy-augmented model
   - Fertility rate  
   - Death rate  
   - Policy dummy  
-4. Dynamic specification
+- Dynamic specification
   - Fertility rate  
   - Death rate  
   - Policy dummy  
