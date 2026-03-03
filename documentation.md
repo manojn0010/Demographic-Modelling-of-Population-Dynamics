@@ -68,7 +68,7 @@ Two representations are created:
 
 >*These policy periods are designed based on active policy years.*   
 >*The current policy (2021 onwards) allows upto 3 children. But since the fines for having 4 or more children was abolished, it is considered to be 'post-policy' period as there is no legal framework that condemns number of children in a family.*   
->*This research was done on various Wikipedia pages and important ones have been referenced.*  
+>*This research was done on various Wikipedia pages and important ones have been listed under sources.*  
 
 Design rationale:
 - Enables both categorical and simplified structural modelling.  
