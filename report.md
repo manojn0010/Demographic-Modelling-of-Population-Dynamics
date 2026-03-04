@@ -93,12 +93,29 @@ The dynamic specification including lagged growth demonstrates that population g
 Residual diagnostics are performed on the final specification to evaluate model assumptions.
 
 The diagnostics include:
-- Residual vs fitted inspection
-- Residual distribution analysis
-- Q–Q normality assessment
-- Residual autocorrelation analysis
+1. Residual vs fitted inspection
+**Purpose:** show model specification validity.
 
-These diagnostics suggest that the model broadly captures the central structure of the data, though further formal testing could strengthen statistical validation.
+The residual vs fitted plot indicates no strong nonlinear pattern,
+suggesting that the linear specification reasonably captures the
+central structure of the data.
+
+2. Residual distribution analysis
+**Purpose:** Assess the distribution of residuals and provide a visual check of the normality assumption.  
+
+The histogram shows that residuals are approximately centred around zero and exhibit a roughly bell-shaped distribution. However, the presence of slight right-skewness and a small number of larger positive residuals indicates minor deviations from perfect normality, though no severe distributional issues are evident.  
+
+3. Q–Q normality assessment
+**Purpose:** show normality assumption.  
+
+Residuals broadly follow the theoretical normal distribution, with minor deviations in the tails.  
+
+4. Residual autocorrelation analysis
+**Purpose:** Assess whether residuals exhibit autocorrelation.  
+
+The autocorrelation function (ACF) of the residuals is examined to detect remaining time-series dependence. Several early lags exceed the confidence bounds, suggesting the presence of residual autocorrelation and possible dynamic misspecification.  
+
+These diagnostics suggest that the model broadly captures the central structure of the data, though further formal testing could strengthen statistical validation.  
 
 ---
 ## One-Step Population Projection
@@ -140,6 +157,7 @@ This project demonstrates a structured demographic modelling workflow combining 
 Rather than focusing on forecasting, the project emphasises the process of model construction, comparison, and interpretation within a reproducible analytical pipeline.
 
 ---
-## References
-- World Bank — World Development Indicators  
-- Population policy information obtained from publicly available historical summaries of China's family planning policies
+## References and Sources
+- Dataset (Source): World Development Indicators - China (World Bank)
+- Population policy information obtained from publicly available historical summaries of China's family planning policies on Wikipedia: <https://en.wikipedia.org/wiki/Family_planning_policies_of_China>
+- Project Repository: <https://github.com/manojn0010/Demographic-Modelling-of-Population-Dynamics/tree/main>
