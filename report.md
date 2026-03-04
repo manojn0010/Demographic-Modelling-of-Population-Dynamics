@@ -95,7 +95,7 @@ Residual diagnostics are performed on the final specification to evaluate model 
 The diagnostics include:
 1. Residual vs fitted inspection
 **Purpose:** show model specification validity.
-<img width="480" height="480" alt="residuals_vs_fitted" src="https://github.com/user-attachments/assets/d14c97f7-59eb-4abc-bba9-2091ce978095" />
+
 The residual vs fitted plot indicates no strong nonlinear pattern,
 suggesting that the linear specification reasonably captures the
 central structure of the data.
