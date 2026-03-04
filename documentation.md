@@ -68,7 +68,7 @@ Two representations are created:
  - years with no active policy: 0
 
 >*Policy regimes are based on the official implementation periods of China's family planning policies. The post-2021 period is treated as a post-policy regime because legal penalties for exceeding child limits were removed.*   
->*This research was done on various Wikipedia pages and important ones have been listed under sources in `/report.md`.*  
+>*This research was done on various Wikipedia pages and the most important source has been listed in `/report.md`.*  
 
 Design rationale:
 - Enables both categorical and simplified structural modelling.  
