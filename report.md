@@ -132,6 +132,12 @@ Steps performed:
 
 This produces a conditional estimate of next-period population assuming current structural relationships remain unchanged.
 
+*Simplified Estimates*
+
+|year|implied_population|implied_growth|
+|---|---|---|
+|2024|1408241754|-0.17496|
+
 ---
 ### Limitations
 
