@@ -18,6 +18,8 @@ The workflow is divided into:
 
 The objective is not descriptive exploration alone, but structured model fitting and evaluation under different demographic and policy specifications.
 
+***This is not a forecasting project. The main focus remains on model-fitting and a one-step ahead prediction. The model validation is limited to basic diagnostics; Statistical tests like Breusch-Pagan, Durbin-Watson and Chow Tests, are not included.***
+
 ---
 ## Data Processing Logic
 
@@ -68,7 +70,7 @@ Two representations are created:
 
 >*These policy periods are designed based on active policy years.*   
 >*The current policy (2021 onwards) allows upto 3 children. But since the fines for having 4 or more children was abolished, it is considered to be 'post-policy' period as there is no legal framework that condemns number of children in a family.*   
->*This research was done on various Wikipedia pages and important ones have been listed under sources.*  
+>*This research was done on various Wikipedia pages and important ones have been listed under sources in `/report.md`.*  
 
 Design rationale:
 - Enables both categorical and simplified structural modelling.  
@@ -85,27 +87,27 @@ Multi-level policy factor and rolling 5 year mean growth are only retained for m
 Four regression specifications are estimated using `lm()`:
 
 ### Model 1 — Baseline Demographic Model
-(growth ~ fertility + death_rate + net_migration)
+(growth ~ fertility + death_rate + net_migration)  
 *Key drivers obtained from WDI*
 
 ### Model 2 — Reduced Specification  
-(growth ~ fertility + death_rate)
-*Migration removed to assess explanatory contribution.*
+(growth ~ fertility + death_rate)  
+*Migration removed to assess explanatory contribution.*  
 *Found to have insignificant impact*
 
 ### Model 3 — Policy-Augmented  
-(growth ~ fertility + death_rate + policy_simplified)
-*Adds structural policy dummy to retained baseline demographic drivers.*
+(growth ~ fertility + death_rate + policy_simplified)  
+*Adds structural policy dummy to retained baseline demographic drivers.*  
 
 ### Model 4 — Dynamic Specification  
-(growth ~ fertility + death_rate + lagged_growth + policy_simplified)
-*Adds lagged growth term*
-*Modelling considers the growth carried forward from last year*
+(growth ~ fertility + death_rate + lagged_growth + policy_simplified)  
+*Adds lagged growth term*  
+*Modelling considers the growth carried forward from last year*  
 
 Design rationale:
-- Progressive model building.
-- Explicit testing of structural and dynamic dependence.
-- Clear nesting across specifications.
+- Progressive model building.  
+- Explicit testing of structural and dynamic dependence.  
+- Clear nesting across specifications.  
 
 All models are saved as `.rds` objects in `/outputs`.
 
@@ -162,7 +164,6 @@ Output saved to: `outputs/implied_population_projection.csv`
 
 ---
 ## Assumptions and Limitations  
-
 - Linear functional form is assumed.
 - No explicit stationarity testing is conducted.
 - OLS estimation assumes exogeneity of regressors.
@@ -171,11 +172,7 @@ Output saved to: `outputs/implied_population_projection.csv`
 - Forecast is one-step conditional, not multi-period dynamic.
 
 ---
-## Reproducibility  
-
-The full modelling workflow can be executed from a fresh R session by running:
-
-```r
-source("scripts/run_all/run_all.R")
-
-The project is deterministic under identical data and package versions.
+## References
+**Data obtained from:** World Bank Open Datasets  
+**Research on Policy Regimes done on:** Wikipedia  
+**Main workflow/Modelling performed using:** R Language
