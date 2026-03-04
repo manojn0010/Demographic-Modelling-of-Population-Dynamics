@@ -21,11 +21,11 @@ The objective is not descriptive exploration alone, but structured model fitting
 ***This project focuses on model fitting rather than forecasting. Only a one-step-ahead prediction is produced. Model validation is limited to graphical diagnostics; formal tests such as Breusch–Pagan, Durbin–Watson, and Chow tests are not included.***
 
 ---
-## Data Processing Logic
+### Data Processing Logic
 
 > Steps performed in `01_load_and_clean.R`
 
-### Raw Data Source  
+#### Raw Data Source  
 The project uses a static World Development Indicators (WDI) extract for China.  
 Variables used:  
 - Year  
@@ -36,7 +36,7 @@ Variables used:
 
 The raw file is included in: `data/raw/raw_china_wdi.xlsx`
 
-### Cleaning Phase  
+#### Cleaning Phase  
 - Renaming of WDI column headers to concise variable names.
 - Explicit type coercion to numeric and integer formats.
 - Removal of rows with missing variable values that are structurally invalid.
@@ -44,16 +44,16 @@ The raw file is included in: `data/raw/raw_china_wdi.xlsx`
 Cleaned dataset saved into: `data/clean/clean_china_wdi.csv`
 
 ---
-## Feature Engineering  
+### Feature Engineering  
 
 > Implemented in `02_controls_and_policy_phase.R`
 
-### Dynamic Components  
+#### Dynamic Components  
 - Annual population growth is computed as a percentage change.
 - Lagged growth is constructed using lag()
 - A five-year rolling growth average is computed using `rollmean()` from the `zoo` package.
 
-### Policy Regime Construction  
+#### Policy Regime Construction  
 Policy regimes are defined using structural break thresholds:
 - Pre-policy (before 1981)  
 - One-child policy (1981–2015)  
@@ -78,26 +78,26 @@ The first observation is removed due to undefined lagged growth.
 Multi-level policy factor and rolling 5 year mean growth are only retained for modelling flexibility and future extension, though not required by all specifications.  
 
 ---
-## Model Construction  
+### Model Construction  
 
 > Implemented in `03_build_models.R`
 
 Four regression specifications are estimated using `lm()`:
 
-### Model 1 — Baseline Demographic Model
+#### Model 1 — Baseline Demographic Model
 (growth ~ fertility + death_rate + net_migration)  
 *Key drivers obtained from WDI*
 
-### Model 2 — Reduced Specification  
+#### Model 2 — Reduced Specification  
 (growth ~ fertility + death_rate)  
 *Migration is removed to evaluate its explanatory contribution.*  
 *Preliminary estimation suggests limited statistical significance.*  
 
-### Model 3 — Policy-Augmented  
+#### Model 3 — Policy-Augmented  
 (growth ~ fertility + death_rate + policy_simplified)  
 *Adds structural policy dummy to retained baseline demographic drivers.*  
 
-### Model 4 — Dynamic Specification  
+#### Model 4 — Dynamic Specification  
 (growth ~ fertility + death_rate + lagged_growth + policy_simplified)  
 *Adds lagged growth term*  
 *Modelling considers the growth carried forward from last year*  
@@ -110,7 +110,7 @@ Design rationale:
 All models are saved as `.rds` objects in `/outputs`.
 
 ---
-## Model Comparison  
+### Model Comparison  
 
 > Implemented in `04_compare_models.R`.
 
@@ -127,7 +127,7 @@ Comparison metrics:
 *Encourages structural interpretation of specification changes.*  
 
 ---
-## Diagnostic Validation  
+### Diagnostic Validation  
 
 > Implemented in `05_residual_diagnostics.R`.
 
@@ -145,7 +145,7 @@ Purpose:
 Outputs saved in: `outputs/diagnostics/`
 
 ---
-## Projection Logic  
+### Projection Logic  
 
 > Implemented in `06_implied_growth.R`.
 
@@ -161,7 +161,7 @@ This produces a conditional projection rather than a recursive simulation.
 Output saved to: `outputs/implied_population_projection.csv`
 
 ---
-## Assumptions and Limitations  
+### Assumptions and Limitations  
 - Linear functional form is assumed.
 - No explicit stationarity testing is conducted.
 - OLS estimation assumes exogeneity of regressors.
@@ -170,7 +170,7 @@ Output saved to: `outputs/implied_population_projection.csv`
 - Forecast is one-step conditional, not multi-period dynamic.
 
 ---
-## References
+### References
 **Data obtained from:** World Bank Open Datasets  
 **Research on Policy Regimes done on:** Wikipedia  
 **Main workflow/Modelling performed using:** R Language
