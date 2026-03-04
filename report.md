@@ -68,13 +68,14 @@ These metrics allow evaluation of explanatory power while accounting for model c
 
 |model|adj.r.squared|sigma|statistic|
 |---|---|---|---|
-|model1|0.9016837803553959|0.25852887342606107|190.5394086012093|
-|model2|0.9027723071301388|0.25709371409754156|288.83920192874825|
-|model3|0.9045120342606138|0.2547832004989117|196.76549320436754|
-|model4|0.977161042107903|0.11800139777601258|653.4687318286947|
+|model1|0.90168|0.25852|190.5394|
+|model2|0.90277|0.25709|288.8392|
+|model3|0.90451|0.25478|196.7654|
+|model4|0.97716|0.11800|653.4687|
 
-The progressive modelling structure highlights how explanatory power changes when migration is removed, or policy regimes, and lagged growth are incorporated.
-
+The progressive modelling structure highlights how explanatory power changes when migration is removed, or policy regimes, and lagged growth are incorporated.  
+Model 4 demonstrates the best performance, with the highest adjusted R², the lowest residual standard error, and the largest F-statistic, indicating superior explanatory power and predictive accuracy relative to the other models.  
+ 
 ---
 ### Key Findings
 
