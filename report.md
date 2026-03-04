@@ -92,22 +92,22 @@ The diagnostics include:
 
 1. Residual vs fitted inspection  
 **Purpose:** show model specification validity.  
-![](dignostic_plots/residuals_vs_fitted.png)  
+![](diagnostic_plots/residuals_vs_fitted.png)  
 The residual vs fitted plot indicates no strong nonlinear pattern, suggesting that the linear specification reasonably captures the central structure of the data.  
 
 2. Residual distribution analysis  
 **Purpose:** Assess the distribution of residuals and provide a visual check of the normality assumption.    
-![](dignostic_plots/residual_histogram.png)  
+![](diagnostic_plots/residual_histogram.png)  
 The histogram shows that residuals are approximately centred around zero and exhibit a roughly bell-shaped distribution. However, the presence of slight right-skewness and a small number of larger positive residuals indicates minor deviations from perfect normality, though no severe distributional issues are evident.  
 
 3. Q–Q normality assessment  
 **Purpose:** show normality assumption.  
-![](dignostic_plots/qq_plot.png)  
+![](diagnostic_plots/qq_plot.png)  
 Residuals broadly follow the theoretical normal distribution, with minor deviations in the tails.  
 
 4. Residual autocorrelation analysis  
 **Purpose:** Assess whether residuals exhibit autocorrelation.  
-![](dignostic_plots/acf_residuals.png)  
+![](diagnostic_plots/acf_residuals.png)  
 The autocorrelation function (ACF) of the residuals is examined to detect remaining time-series dependence. Several early lags exceed the confidence bounds, suggesting the presence of residual autocorrelation and possible dynamic misspecification.  
 
 These diagnostics suggest that the model broadly captures the central structure of the data, though further formal testing could strengthen statistical validation.  
