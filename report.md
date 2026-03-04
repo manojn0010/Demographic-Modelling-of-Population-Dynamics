@@ -74,7 +74,7 @@ These metrics allow evaluation of explanatory power while accounting for model c
 |model4|0.97716|0.11800|653.4687|
 
 The progressive modelling structure highlights how explanatory power changes when migration is removed, or policy regimes, and lagged growth are incorporated.  
-Model 4 demonstrates the best performance, with the highest adjusted R², the lowest residual standard error, and the largest F-statistic, indicating superior explanatory power and predictive accuracy relative to the other models.  
+>Model 4 demonstrates the best performance, with the highest adjusted R², the lowest residual standard error, and the largest F-statistic, indicating superior explanatory power and predictive accuracy relative to the other models.  
  
 ---
 ### Key Findings
@@ -99,22 +99,22 @@ Residual diagnostics are performed on the final specification to evaluate model 
 The diagnostics include:
 
 1. Residual vs fitted inspection  
-**Purpose:** show model specification validity.  
+**Purpose:** Show model specification validity    
 ![](diagnostic_plots/residuals_vs_fitted.png)  
 The residual vs fitted plot indicates no strong nonlinear pattern, suggesting that the linear specification reasonably captures the central structure of the data.  
 
 2. Residual distribution analysis  
-**Purpose:** Assess the distribution of residuals and provide a visual check of the normality assumption.    
+**Purpose:** Assess the distribution of residuals and provide a visual check of the normality assumption  
 ![](diagnostic_plots/residual_histogram.png)  
 The histogram shows that residuals are approximately centred around zero and exhibit a roughly bell-shaped distribution. However, the presence of slight right-skewness and a small number of larger positive residuals indicates minor deviations from perfect normality, though no severe distributional issues are evident.  
 
 3. Q–Q normality assessment  
-**Purpose:** show normality assumption.  
+**Purpose:** Show normality assumption  
 ![](diagnostic_plots/qq_plot.png)  
 Residuals broadly follow the theoretical normal distribution, with minor deviations in the tails.  
 
-4. Residual autocorrelation analysis  
-**Purpose:** Assess whether residuals exhibit autocorrelation.  
+4. Residual autocorrelation analysis   
+**Purpose:** Assess whether residuals exhibit autocorrelation    
 ![](diagnostic_plots/acf_residuals.png)  
 The autocorrelation function (ACF) of the residuals is examined to detect remaining time-series dependence. Several early lags exceed the confidence bounds, suggesting the presence of residual autocorrelation and possible dynamic misspecification.  
 
@@ -147,7 +147,7 @@ Several modelling limitations should be noted:
 ### Potential Extensions
 
 Future work could extend this analysis through:
-- Introducing extra drivers; `rolling_5yr_growth` and `policy_phase` instead of the simplified policy structure.
+- Introducing extra drivers; `rolling_5yr_growth` and `policy_phase` instead of the simplified policy structure
 - Formal structural break testing
 - Stationarity testing and time-series modelling
 - Alternative functional forms (log transformations)
