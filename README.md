@@ -12,16 +12,16 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
 **Data Manipulation and Visualisation:** `tidyverse`, `broom`, `zoo`, `here` packages  
 
 ---
-## How to Run
+### How to Run
 
 1. Clone the repository. Extract project folder to a preferred location.
 
-2. Create R project  
+2. Create R project.   
   - Open RStudio > File > New Project > Existing Directory  
   - Browse to the project directory  
   - Select **Create Project**  
 
-3. Execute the full pipeline
+3. Execute the full pipeline.  
   - Create a new R script and run: `source("scripts/run_all/run_all.R")`
   - This sequentially executes:
     - Package installation (if required)
@@ -32,17 +32,17 @@ Using R for data transformation, statistical modelling, and diagnostic validatio
     - Residual diagnostics
     - Population projection
 
-4. All outputs are written to `/outputs`.
+4. All outputs are written to `/outputs`.  
 
 ---
-## Data
+### Data
 
 The project uses a static extract of World Development Indicators (WDI) data.  
 The raw dataset is included in the repository; `data/raw/raw_china_wdi.xlsx`.  
 Cleaned datasets are generated automatically by the pipeline.
 
 ---
-## Model Specifications
+### Model Specifications
 
 Drivers of the four regression models built:  
 - Baseline demographic model
@@ -68,7 +68,7 @@ Models are compared using:
   - F-statistic
 
 ---
-## Project Notes
+### Project Notes
 
 - Each script is self-contained and loads required inputs explicitly.
 - No global environment dependencies are assumed.
