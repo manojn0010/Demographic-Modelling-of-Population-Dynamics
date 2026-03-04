@@ -66,6 +66,13 @@ Models are compared using three key statistics:
 
 These metrics allow evaluation of explanatory power while accounting for model complexity.
 
+|model|adj.r.squared|sigma|statistic|
+|---|---|---|---|
+|model1|0.9016837803553959|0.25852887342606107|190.5394086012093|
+|model2|0.9027723071301388|0.25709371409754156|288.83920192874825|
+|model3|0.9045120342606138|0.2547832004989117|196.76549320436754|
+|model4|0.977161042107903|0.11800139777601258|653.4687318286947|
+
 The progressive modelling structure highlights how explanatory power changes when migration is removed, or policy regimes, and lagged growth are incorporated.
 
 ---
