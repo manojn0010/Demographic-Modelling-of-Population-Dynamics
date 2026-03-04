@@ -18,7 +18,7 @@ The workflow is divided into:
 
 The objective is not descriptive exploration alone, but structured model fitting and evaluation under different demographic and policy specifications.
 
-***This is not a forecasting project. The main focus remains on model-fitting and a one-step ahead prediction. The model validation is limited to basic diagnostics; Statistical tests like Breusch-Pagan, Durbin-Watson and Chow Tests, are not included.***
+***This project focuses on model fitting rather than forecasting. Only a one-step-ahead prediction is produced. Model validation is limited to graphical diagnostics; formal tests such as Breusch–Pagan, Durbin–Watson, and Chow tests are not included.***
 
 ---
 ## Data Processing Logic
@@ -49,10 +49,9 @@ Cleaned dataset saved into: `data/clean/clean_china_wdi.csv`
 > Implemented in `02_controls_and_policy_phase.R`
 
 ### Dynamic Components  
-- Annual growth is computed as percentage
+- Annual population growth is computed as a percentage change.
 - Lagged growth is constructed using lag()
 - A five-year rolling growth average is computed using `rollmean()` from the `zoo` package.
-- This enables dynamic regression specification.
 
 ### Policy Regime Construction  
 Policy regimes are defined using structural break thresholds:
@@ -68,8 +67,7 @@ Two representations are created:
  - years with active policy: 1  
  - years with no active policy: 0
 
->*These policy periods are designed based on active policy years.*   
->*The current policy (2021 onwards) allows upto 3 children. But since the fines for having 4 or more children was abolished, it is considered to be 'post-policy' period as there is no legal framework that condemns number of children in a family.*   
+>*Policy regimes are based on the official implementation periods of China's family planning policies. The post-2021 period is treated as a post-policy regime because legal penalties for exceeding child limits were removed.*   
 >*This research was done on various Wikipedia pages and important ones have been listed under sources in `/report.md`.*  
 
 Design rationale:
@@ -92,8 +90,8 @@ Four regression specifications are estimated using `lm()`:
 
 ### Model 2 — Reduced Specification  
 (growth ~ fertility + death_rate)  
-*Migration removed to assess explanatory contribution.*  
-*Found to have insignificant impact*
+*Migration is removed to evaluate its explanatory contribution.*  
+*Preliminary estimation suggests limited statistical significance.*  
 
 ### Model 3 — Policy-Augmented  
 (growth ~ fertility + death_rate + policy_simplified)  
