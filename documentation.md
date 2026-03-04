@@ -23,7 +23,7 @@ The objective is not descriptive exploration alone, but structured model fitting
 ---
 ### Data Processing Logic
 
-> Steps performed in `01_load_and_clean.R`
+> Steps performed in `01_load_and_clean.R`.
 
 #### Raw Data Source  
 The project uses a static World Development Indicators (WDI) extract for China.  
@@ -34,24 +34,24 @@ Variables used:
 - Crude death rate (per 1,000 people)  
 - Net migration  
 
-The raw file is included in: `data/raw/raw_china_wdi.xlsx`
+The raw file is included in: `data/raw/raw_china_wdi.xlsx`.
 
 #### Cleaning Phase  
-- Renaming of WDI column headers to concise variable names.
-- Explicit type coercion to numeric and integer formats.
-- Removal of rows with missing variable values that are structurally invalid.
+- Renaming of WDI column headers to concise variable names  
+- Explicit type coercion to numeric and integer formats  
+- Removal of rows with missing variable values that are structurally invalid  
 
-Cleaned dataset saved into: `data/clean/clean_china_wdi.csv`
+Cleaned dataset saved into: `data/clean/clean_china_wdi.csv`.
 
 ---
 ### Feature Engineering  
 
-> Implemented in `02_controls_and_policy_phase.R`
+> Implemented in `02_controls_and_policy_phase.R`.
 
 #### Dynamic Components  
-- Annual population growth is computed as a percentage change.
+- Annual population growth is computed as a percentage change
 - Lagged growth is constructed using lag()
-- A five-year rolling growth average is computed using `rollmean()` from the `zoo` package.
+- A five-year rolling growth average is computed using `rollmean()` from the `zoo` package
 
 #### Policy Regime Construction  
 Policy regimes are defined using structural break thresholds:
@@ -71,8 +71,8 @@ Two representations are created:
 >*This research was done on various Wikipedia pages and the most important source has been listed in `/report.md`.*  
 
 Design rationale:
-- Enables both categorical and simplified structural modelling.  
-- Allows testing of regime-based structural effects.
+- Enables both categorical and simplified structural modelling    
+- Allows testing of regime-based structural effects  
 
 The first observation is removed due to undefined lagged growth.  
 Multi-level policy factor and rolling 5 year mean growth are only retained for modelling flexibility and future extension, though not required by all specifications.  
@@ -80,13 +80,13 @@ Multi-level policy factor and rolling 5 year mean growth are only retained for m
 ---
 ### Model Construction  
 
-> Implemented in `03_build_models.R`
+> Implemented in `03_build_models.R`.
 
 Four regression specifications are estimated using `lm()`:
 
 #### Model 1 — Baseline Demographic Model
 (growth ~ fertility + death_rate + net_migration)  
-*Key drivers obtained from WDI*
+*Key drivers obtained from WDI.*
 
 #### Model 2 — Reduced Specification  
 (growth ~ fertility + death_rate)  
@@ -99,15 +99,15 @@ Four regression specifications are estimated using `lm()`:
 
 #### Model 4 — Dynamic Specification  
 (growth ~ fertility + death_rate + lagged_growth + policy_simplified)  
-*Adds lagged growth term*  
-*Modelling considers the growth carried forward from last year*  
+*Adds lagged growth term.*  
+*Modelling considers the growth carried forward from last year.*  
 
 Design rationale:
-- Progressive model building.  
-- Explicit testing of structural and dynamic dependence.  
-- Clear nesting across specifications.  
+- Progressive model building  
+- Explicit testing of structural and dynamic dependence  
+- Clear nesting across specifications  
 
-All models are saved as `.rds` objects in `/outputs`.
+All models are saved as `.rds` objects in `/outputs`
 
 ---
 ### Model Comparison  
@@ -138,9 +138,9 @@ Diagnostics include:
 - Autocorrelation function (ACF) plot (serial dependence)
 
 Purpose:
-- Validate classical OLS assumptions.
-- Identify dynamic misspecification.
-- Assess time-series residual structure.
+- Validate classical OLS assumptions  
+- Identify dynamic misspecification  
+- Assess time-series residual structure  
 
 Outputs saved in: `outputs/diagnostics/`
 
