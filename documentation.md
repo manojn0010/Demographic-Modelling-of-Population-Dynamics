@@ -168,9 +168,3 @@ Output saved to: `outputs/implied_population_projection.csv`
 - Serial correlation is inspected visually but not formally tested.
 - Policy breakpoints are imposed deterministically, not statistically estimated.
 - Forecast is one-step conditional, not multi-period dynamic.
-
----
-### References
-**Data obtained from:** World Bank Open Datasets  
-**Research on Policy Regimes done on:** Wikipedia  
-**Main workflow/Modelling performed using:** R Language
