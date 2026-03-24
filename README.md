@@ -76,3 +76,10 @@ Models are compared using:
 - Feature engineering and modelling are separated for clarity and reproducibility.
 - Additional project decisions and implementation notes are documented in `/documentation.md`.
 - The `/report.md` file summarises the findings and key results of the analysis.
+
+---
+### References
+
+**Data obtained from:** World Bank Open Datasets  
+**Research on Policy Regimes done on:** Wikipedia  
+**Main workflow/Modelling performed using:** R Language
